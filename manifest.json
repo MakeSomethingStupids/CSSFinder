@@ -1,10 +1,18 @@
 {
-    "manifest_version": 3,
-    "name": "Hello Extensions",
-    "description": "나의 첫 확장 프로그램",
-    "version": "1.01",
-    "action": {
-      "default_popup": "index.html",
-      "default_icon": "hello_extensions.png"
+  "manifest_version": 3,
+  "name": "클래스 및 ID 반환기",
+  "version": "1.0",
+  "description": "클릭한 요소의 클래스와 ID를 반환합니다.",
+  "permissions": ["scripting", "activeTab"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "클래스 및 ID 반환기"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"],
+      "run_at": "document_end"
     }
-  }
+  ]
+}
